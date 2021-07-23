@@ -1,0 +1,16 @@
+{
+    "author-header": {
+
+        "author": "Hxdayah98",
+        "contents": [
+            "this is on line 1.",
+            "this is on line 2.",
+            "this is on line 3."
+        ],
+        "auto-comment-type": "//",
+        "auto-space": true,
+        "auto-title": true,
+        "auto-date-type": 1
+    },
+    "git.ignoreLimitWarning": true
+}
