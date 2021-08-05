@@ -50,7 +50,6 @@ class StripeController extends Controller
      	'phone' => $request->phone,
      	'post_code' => $request->post_code,
      	'notes' => $request->notes,
-
      	'payment_type' => 'Stripe',
      	'payment_method' => 'Stripe',
      	'payment_type' => $charge->payment_method,

@@ -10,7 +10,7 @@
 		  <div class="box">
 			<div class="box-header with-border">
 			  <h4 class="box-title">Admin Change Password</h4>
-			  
+
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
@@ -44,16 +44,16 @@
 		<div class="controls">
 	 <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required="" > </div>
 	</div>
-					
-				</div> <!-- end cold md 6 --> 
-				
-			</div>	<!-- end row 	 -->	
 
- 
-	  
+				</div> <!-- end cold md 6 -->
+
+			</div>	<!-- end row 	 -->
+
+
+
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">					 
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
 						</div>
 					</form>
 
@@ -67,11 +67,11 @@
 		  <!-- /.box -->
 
 		</section>
- 
+
 
 
 	  </div>
 
- 
+
 
 @endsection

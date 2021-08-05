@@ -74,7 +74,7 @@ public function BlogCategoryUpdate(Request $request){
 
 	    $notification = array(
 			'message' => 'Blog Category Updated Successfully',
-			'alert-type' => 'info'
+			'alert-type' => 'success'
 		);
 
 		return redirect()->route('blog.category')->with($notification);
@@ -138,6 +138,22 @@ public function BlogCategoryUpdate(Request $request){
 
   } // end mehtod
 
+  public function BlogDelete($id){
+
+    $blog = BlogPost::findOrFail($id);
+    $img = $blog->post_image;
+    unlink($img);
+
+    BlogPost::findOrFail($id)->delete();
+
+     $notification = array(
+        'message' => 'Blog Post Deleted Successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
+
+} // end method
 
 
 }

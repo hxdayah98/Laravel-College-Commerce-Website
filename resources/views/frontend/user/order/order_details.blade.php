@@ -87,7 +87,7 @@
             </tr>
 
              <tr>
-              <th> Tranx ID : </th>
+              <th> Transaction ID : </th>
                <th> {{ $order->transaction_id }} </th>
             </tr>
 
@@ -156,12 +156,12 @@
                 </td>
 
                 <td class="col-md-1">
-                  <label for=""> Price </label>
+                  <label for=""> Price per Unit </label>
                 </td>
 
-                 <td class="col-md-1">
-                  <label for=""> Download </label>
-                </td>
+                <td class="col-md-1">
+                    <label for=""> Total Price </label>
+                  </td>
 
               </tr>
 
@@ -172,57 +172,37 @@
                   <label for=""><img src="{{ asset($item->product->product_thumbnail) }}" height="50px;" width="50px;"> </label>
                 </td>
 
-                <td class="col-md-3">
+                <td class="col-md-2">
                   <label for=""> {{ $item->product->product_name_en }}</label>
                 </td>
 
 
-                 <td class="col-md-3">
+                 <td class="col-md-1">
                   <label for=""> {{ $item->product->product_code }}</label>
                 </td>
 
-                <td class="col-md-2">
+                <td class="col-md-1">
                   <label for=""> {{ $item->color }}</label>
                 </td>
 
-                <td class="col-md-2">
+                <td class="col-md-1">
                   <label for=""> {{ $item->size }}</label>
                 </td>
 
-                 <td class="col-md-2">
+                 <td class="col-md-1">
                   <label for=""> {{ $item->qty }}</label>
                 </td>
 
-          <td class="col-md-2">
-                  <label for=""> ${{ $item->price }}  ( $ {{ $item->price * $item->qty}} ) </label>
+          <td class="col-md-1">
+                  <label for=""> RM{{ $item->price }}</label>
                 </td>
 
-
-@php
-
-$file = App\Models\Product::where('id',$item->product_id)->first();
-@endphp
-
-             <td class="col-md-1">
-              @if($order->status == 'pending')
-              <strong>
- <span class="badge badge-pill badge-success" style="background: #418DB9;"> No File</span>  </strong>
-
-              @elseif($order->status == 'confirm')
-
-<a target="_blank" href="{{ asset('upload/pdf/'.$file->digital_file) }}">
-  <strong>
- <span class="badge badge-pill badge-success" style="background: #FF0000;"> Download Ready</span>  </strong> </a>
-              @endif
+              <td class="col-md-1">
+                <label for=""> RM{{ $item->price * $item->qty}}</label>
+              </td>
+            </tr>
 
 
-                </td>
-
-
-
-
-
-              </tr>
               @endforeach
 
 
@@ -239,37 +219,6 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
        </div> <!-- / end col md 8 -->
 
       </div> <!-- // END ORDER ITEM ROW -->
-
-      @if($order->status !== "delivered")
-
-      @else
-
-      @php
-      $order = App\Models\Order::where('id',$order->id)->where('return_reason','=',NULL)->first();
-      @endphp
-
-
-      @if($order)
-      <form action="{{ route('return.order',$order->id) }}" method="post">
-        @csrf
-
-  <div class="form-group">
-    <label for="label"> Order Return Reason:</label>
-    <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>
-  </div>
-
-  <button type="submit" class="btn btn-danger">Order Return</button>
-
-</form>
-   @else
-
-   <span class="badge badge-pill badge-warning" style="background: red">You Have send return request for this product</span>
-
-   @endif
-
-
-
-  @endif
 <br><br>
 
 

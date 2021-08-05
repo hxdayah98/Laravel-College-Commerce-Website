@@ -53,9 +53,9 @@
         <td align="right">
             <pre class="font" >
                College Commerce Support
-               Email:support@colcomuitm.com <br>
+               Email:colcomuitm@gmail.com <br>
                Mob: 1245454545 <br>
-               MMerlimau 43000, Malacca:#4 <br>
+               Merlimau 43000, Malacca:#4 <br>
 
             </pre>
         </td>

@@ -77,7 +77,7 @@ body {
    <a href="{{ url('product/details/'.$item->id.'/'.$item->product_slug_en ) }}">
                 <div class="list border-bottom">  <img src="{{ asset($item->product_thumbnail) }}" style="width: 30px; height: 30px;">
 
-   <div class="d-flex flex-column ml-3" style="margin-left: 10px;"> <span>{{ $item->product_name_en }} </span> <small> ${{ $item->selling_price }}</small> </div>
+   <div class="d-flex flex-column ml-3" style="margin-left: 10px;"> <span>{{ $item->product_name_en }} </span> <small> RM{{ $item->selling_price }}</small> </div>
                 </div>
                 </a>
                 @endforeach

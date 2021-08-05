@@ -48,24 +48,24 @@ Cash On Delivery
 		 <li>
 		 	@if(Session::has('coupon'))
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>Sub Total: </strong> ${{ $cartTotal }} <hr>
 
 <strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
 ( {{ session()->get('coupon')['coupon_discount'] }} % )
  <hr>
 
- <strong>Coupon Discount : </strong> ${{ session()->get('coupon')['discount_amount'] }}
+ <strong>Coupon Discount : </strong> RM{{ session()->get('coupon')['discount_amount'] }}
  <hr>
 
-  <strong>Grand Total : </strong> ${{ session()->get('coupon')['total_amount'] }}
+  <strong>Grand Total : </strong> RM{{ session()->get('coupon')['total_amount'] }}
  <hr>
 
 
 		 	@else
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>SubTotal: </strong> RM{{ $cartTotal }} <hr>
 
-<strong>Grand Total : </strong> ${{ $cartTotal }} <hr>
+<strong>Grand Total : </strong> RM{{ $cartTotal }} <hr>
 
 
 		 	@endif
@@ -141,24 +141,7 @@ Cash On Delivery
 </form>
 			</div><!-- /.row -->
 		</div><!-- /.checkout-box -->
-		<!-- === ===== BRANDS CAROUSEL ==== ======== -->
-
-
-
-
-
-
-
-
-<!-- ===== == BRANDS CAROUSEL : END === === -->
 </div><!-- /.container -->
 </div><!-- /.body-content -->
-
-
-
-
-
-
-
 
 @endsection

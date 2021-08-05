@@ -14,7 +14,7 @@
 				 <a href="/admin/dashboard">
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">
-						  <img src="{{ asset('backend/images/logo-dark.png') }}" alt="">
+						  <img src="{{ asset('backend/images/logo colcom.png') }}" alt="" style="height:40px">
 						  <h3><b>Colcom</b> Admin</h3>
 					 </div>
 				</a>
@@ -212,32 +212,6 @@
           </a>
           <ul class="treeview-menu">
         <li class="{{ ($route == 'site.setting')? 'active':'' }}"><a href="{{ route('site.setting') }}"><i class="ti-more"></i>Site Setting</a></li>
-
-        <li class="{{ ($route == 'seo.setting')? 'active':'' }}"><a href="{{ route('seo.setting') }}"><i class="ti-more"></i>Seo Setting</a></li>
-
-
-          </ul>
-        </li>
-
-        @else
-        @endif
-
-     @if($returnorder == true)
-
-        <li class="treeview {{ ($prefix == '/return')?'active':'' }}  ">
-          <a href="#">
-            <i data-feather="file"></i>
-            <span>Return Order</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-        <li class="{{ ($route == 'return.request')? 'active':'' }}"><a href="{{ route('return.request') }}"><i class="ti-more"></i>Return Request</a></li>
-
-        <li class="{{ ($route == 'all.request')? 'active':'' }}"><a href="{{ route('all.request') }}"><i class="ti-more"></i>All Request</a></li>
-
-
           </ul>
         </li>
 
@@ -268,10 +242,6 @@
         @endif
 
 
-
-        <li class="header nav-small-cap">User Interface</li>
-
-
 		    @if($orders == true)
         <li class="treeview {{ ($prefix == '/orders')?'active':'' }}  ">
           <a href="#">
@@ -294,34 +264,10 @@
 
      <li class="{{ ($route == 'delivered-orders')? 'active':'' }}"><a href="{{ route('delivered-orders') }}"><i class="ti-more"></i> Delivered Orders</a></li>
 
-  <li class="{{ ($route == 'cancel-orders')? 'active':'' }}"><a href="{{ route('cancel-orders') }}"><i class="ti-more"></i> Cancel Orders</a></li>
-
-
 
           </ul>
         </li>
         @else
-        @endif
-
-     @if($stock == true)
-
-
- <li class="treeview {{ ($prefix == '/stock')?'active':'' }}  ">
-          <a href="#">
-            <i data-feather="file"></i>
-            <span>Manage Stock </span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-        <li class="{{ ($route == 'product.stock')? 'active':'' }}"><a href="{{ route('product.stock') }}"><i class="ti-more"></i>Product Stock</a></li>
-
-
-          </ul>
-        </li>
-
-		    @else
         @endif
 
      @if($reports == true)
@@ -329,7 +275,7 @@
 		 <li class="treeview {{ ($prefix == '/reports')?'active':'' }}  ">
           <a href="#">
             <i data-feather="file"></i>
-            <span>All Reports </span>
+            <span>Report </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -337,10 +283,8 @@
           <ul class="treeview-menu">
         <li class="{{ ($route == 'all-reports')? 'active':'' }}"><a href="{{ route('all-reports') }}"><i class="ti-more"></i>All Reports</a></li>
 
-
           </ul>
         </li>
-
 
         @else
         @endif
@@ -350,14 +294,13 @@
      <li class="treeview {{ ($prefix == '/alluser')?'active':'' }}  ">
           <a href="#">
             <i data-feather="file"></i>
-            <span>All Users </span>
+            <span>Users </span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-        <li class="{{ ($route == 'all-users')? 'active':'' }}"><a href="{{ route('all-users') }}"><i class="ti-more"></i>All Users</a></li>
-
+        <li class="{{ ($route == 'all-users')? 'active':'' }}"><a href="{{ route('all-users') }}"><i class="ti-more"></i>Customer List</a></li>
 
           </ul>
         </li>
@@ -365,8 +308,6 @@
         @endif
 
      @if($adminuserrole == true)
-
-
         <li class="treeview {{ ($prefix == '/adminuserrole')?'active':'' }}  ">
           <a href="#">
             <i data-feather="file"></i>

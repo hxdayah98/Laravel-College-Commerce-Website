@@ -27,8 +27,8 @@
 						<thead>
 							<tr>
 								<th>Category </th>
-								<th>SubCategory En</th>
-								<th>SubCategory Hin </th>
+								<th>SubCategory (EN)</th>
+								<th>SubCategory (MY)</th>
 								<th>Action</th>
 
 							</tr>
@@ -119,7 +119,7 @@
 
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add">
 						</div>
 					</form>
 

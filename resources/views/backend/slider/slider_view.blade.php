@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			   
-		 
+
+
 
 			<div class="col-8">
 
@@ -28,10 +28,10 @@
 							<tr>
 								<th>Slider Image </th>
 								<th>Title</th>
-								<th>Decription</th>
+								<th>Description</th>
 								<th>Status</th>
 								<th>Action</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -56,7 +56,7 @@
 		 	@endif
 
 		 </td>
-		
+
 		<td width="30%">
  <a href="{{ route('slider.edit',$item->id) }}" class="btn btn-info btn-sm" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
@@ -70,11 +70,11 @@
 	 @endif
 
 		</td>
-							 
+
 	 </tr>
 	  @endforeach
 						</tbody>
-						 
+
 					  </table>
 					</div>
 				</div>
@@ -82,7 +82,7 @@
 			  </div>
 			  <!-- /.box -->
 
-			          
+
 			</div>
 			<!-- /.col -->
 
@@ -103,22 +103,22 @@
 
  <form method="post" action="{{ route('slider.store') }}" enctype="multipart/form-data">
 	 	@csrf
-					   
+
 
 	 <div class="form-group">
-		<h5>Slider Title  <span class="text-danger">*</span></h5>
+		<h5>Slider Title</h5>
 		<div class="controls">
-	 <input type="text"  name="title" class="form-control" > 
-	 
+	 <input type="text"  name="title" class="form-control" >
+
 	</div>
 	</div>
 
 
 	<div class="form-group">
-		<h5>Slider Decription <span class="text-danger">*</span></h5>
+		<h5>Slider Description</h5>
 		<div class="controls">
 	 <input type="text" name="description" class="form-control" >
-     
+
 	  </div>
 	</div>
 
@@ -128,39 +128,39 @@
 		<h5>Slider Image <span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="file" name="slider_img" class="form-control" >
-     @error('slider_img') 
+     @error('slider_img')
 	 <span class="text-danger">{{ $message }}</span>
-	 @enderror 
+	 @enderror
 	  </div>
 	</div>
-					 
+
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">					 
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add">
 						</div>
 					</form>
 
 
 
 
-					  
+
 					</div>
 				</div>
 				<!-- /.box-body -->
 			  </div>
-			  <!-- /.box --> 
+			  <!-- /.box -->
 			</div>
 
- 
+
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
-  
+
 
 
 

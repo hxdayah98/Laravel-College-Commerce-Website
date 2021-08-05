@@ -8,17 +8,17 @@ use App\Models\Admin;
 use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
- 
+
 class AdminProfileController extends Controller
-{ 
-   
+{
+
 	public function AdminProfile(){
 
 		$id = Auth::user()->id;
 		$adminData = Admin::find($id);
 		return view('admin.admin_profile_view',compact('adminData'));
 	}
- 
+
 
 	public function AdminProfileEdit(){
 
@@ -53,7 +53,7 @@ class AdminProfileController extends Controller
 
 		return redirect()->route('admin.profile')->with($notification);
 
-	} // end method 
+	} // end method
 
 
 
@@ -87,10 +87,31 @@ class AdminProfileController extends Controller
 
 
 
-	public function AllUsers(){
+	public function AllCustomers(){
 		$users = User::latest()->get();
-		return view('backend.user.all_user',compact('users'));
+		return view('backend.user.all_customers',compact('users'));
 	}
+
+    public function CustDelete($id){
+    	$user = User::findOrFail($id);
+    	$img = $user->profile_photo_path;
+        if ($user->profile_photo_path != NULL) {
+    	unlink($img);
+        }
+    	User::findOrFail($id)->delete();
+    	 $notification = array(
+			'message' => 'User Deleted Successfully',
+			'alert-type' => 'success'
+		);
+
+		return redirect()->back()->with($notification);
+
+    } // end method
+
+    // public function AllSellers(){
+	// 	$sellers = Seller::latest()->get();
+	// 	return view('backend.user.all_sellers',compact('sellers'));
+	// }
 
 
 

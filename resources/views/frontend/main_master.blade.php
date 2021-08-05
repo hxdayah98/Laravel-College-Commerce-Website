@@ -1,25 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
-@php
-$seo = App\Models\Seo::find(1);
-@endphp
 <head>
 <!-- Meta -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="{{ $seo->meta_description }}">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-
-<meta name="author" content="{{ $seo->meta_author }}">
-<meta name="keywords" content="{{ $seo->meta_keyword }}">
 <meta name="robots" content="all">
 
-<!-- /// Google Analytics Code // -->
-<script>
-    {{ $seo->google_analytics }}
-</script>
-<!-- /// Google Analytics Code // -->
+<link rel="icon" href="{{ asset('backend/images/logo colcom.png') }}">
 
 <title>@yield('title') </title>
 
@@ -135,13 +123,13 @@ $seo = App\Models\Seo::find(1);
         <div class="col-md-4">
 
      <ul class="list-group">
-  <li class="list-group-item">Product Price: <strong class="text-danger">$<span id="pprice"></span></strong>
-<del id="oldprice">$</del>
+  <li class="list-group-item">Product Price: <strong class="text-danger">RM<span id="pprice"></span></strong>
+<del id="oldprice">RM</del>
    </li>
   <li class="list-group-item">Product Code: <strong id="pcode"></strong></li>
   <li class="list-group-item">Category: <strong id="pcategory"></strong></li>
   <li class="list-group-item">Brand: <strong id="pbrand"></strong></li>
-  <li class="list-group-item">Stock: <span class="badge badge-pill badge-success" id="aviable" style="background: green; color: white;"></span>
+  <li class="list-group-item">Stock: <span class="badge badge-pill badge-success" id="Available" style="background: green; color: white;"></span>
 <span class="badge badge-pill badge-danger" id="stockout" style="background: red; color: white;"></span>
 
   </li>
@@ -179,12 +167,7 @@ $seo = App\Models\Seo::find(1);
 
 
         </div><!-- // end col md -->
-
-
        </div> <!-- // end row -->
-
-
-
       </div> <!-- // end modal Body -->
 
     </div>
@@ -209,7 +192,6 @@ function productView(id){
         url: '/product/view/modal/'+id,
         dataType:'json',
         success:function(data){
-            // console.log(data)
             $('#pname').text(data.product.product_name_en);
             $('#price').text(data.product.selling_price);
             $('#pcode').text(data.product.product_code);
@@ -569,7 +551,7 @@ function addToWishList(product_id){
             <div class="product-name"><a href="#">${value.name}</a></div>
 
             <div class="price">
-                            ${value.price}
+                            RM${value.price}
                         </div>
                     </td>
 
@@ -603,7 +585,7 @@ function addToWishList(product_id){
             </td>
 
              <td class="col-md-2">
-            <strong>$${value.subtotal} </strong>
+            <strong>RM${value.subtotal} </strong>
             </td>
 
 
@@ -772,10 +754,10 @@ function addToWishList(product_id){
                     `<tr>
                 <th>
                     <div class="cart-sub-total">
-                        Subtotal<span class="inner-left-md">$ ${data.total}</span>
+                        Subtotal<span class="inner-left-md">RM${data.total}</span>
                     </div>
                     <div class="cart-grand-total">
-                        Grand Total<span class="inner-left-md">$ ${data.total}</span>
+                        Grand Total<span class="inner-left-md">RM${data.total}</span>
                     </div>
                 </th>
             </tr>`
@@ -787,20 +769,20 @@ function addToWishList(product_id){
                     `<tr>
         <th>
             <div class="cart-sub-total">
-                Subtotal<span class="inner-left-md">$ ${data.subtotal}</span>
+                Subtotal<span class="inner-left-md">RM${data.subtotal}</span>
             </div>
             <div class="cart-sub-total">
-                Coupon<span class="inner-left-md">$ ${data.coupon_name}</span>
+                Coupon<span class="inner-left-md">RM${data.coupon_name}</span>
                 <button type="submit" onclick="couponRemove()"><i class="fa fa-times"></i>  </button>
             </div>
 
              <div class="cart-sub-total">
-                Discount Amount<span class="inner-left-md">$ ${data.discount_amount}</span>
+                Discount Amount<span class="inner-left-md">RM${data.discount_amount}</span>
             </div>
 
 
             <div class="cart-grand-total">
-                Grand Total<span class="inner-left-md">$ ${data.total_amount}</span>
+                Grand Total<span class="inner-left-md">RM${data.total_amount}</span>
             </div>
         </th>
             </tr>`

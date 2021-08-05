@@ -2,9 +2,10 @@
 @section('content')
 
 @section('title')
- Wish List Page 
+ Wish List Page
 @endsection
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <div class="breadcrumb">
 	<div class="container">
@@ -30,18 +31,13 @@
 				</tr>
 			</thead>
 			<tbody id="wishlist">
-				
-				 
+
+
 			</tbody>
 		</table>
 	</div>
 </div>			</div><!-- /.row -->
 		</div><!-- /.sigin-in-->
-
-
-
-<br>
- @include('frontend.body.brands')
 </div>
 
 

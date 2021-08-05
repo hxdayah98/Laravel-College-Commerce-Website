@@ -8,7 +8,6 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
 use App\Models\Brand;
-
 use App\Models\Product;
 use App\Models\MultiImg;
 use Carbon\Carbon;
@@ -24,17 +23,6 @@ class ProductController extends Controller
 	}
 
 	public function StoreProduct(Request $request){
-    $request->validate([
-      'file' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
-    ]);
-
-    if ($files = $request->file('file')) {
-      $destinationPath = 'upload/pdf'; // upload path
-      $digitalItem = date('YmdHis') . "." . $files->getClientOriginalExtension();
-      $files->move($destinationPath,$digitalItem);
-    }
-
-
 
         $image = $request->file('product_thumbnail');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -69,7 +57,6 @@ class ProductController extends Controller
       	'special_offer' => $request->special_offer,
       	'special_deals' => $request->special_deals,
       	'product_thumbnail' => $save_url,
-        'digital_file' => $digitalItem,
       	'status' => 1,
       	'created_at' => Carbon::now(),
       ]);

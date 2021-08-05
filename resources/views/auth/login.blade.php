@@ -1,12 +1,16 @@
 @extends('frontend.main_master')
 @section('content')
 
+@section('title')
+College Commerce (Colcom) Login
+@endsection
+
 <div class="breadcrumb">
     <div class="container">
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
-                <li><a href="home.html">Home</a></li>
-                <li class='active'>Login</li>
+                <li><a href="">Home</a></li>
+                <li class='active'>Login/Register</li>
             </ul>
         </div><!-- /.breadcrumb-inner -->
     </div><!-- /.container -->
@@ -50,7 +54,11 @@
             <a href="{{ route('password.request') }}" class="forgot-password pull-right">Forgot your Password?</a>
         </div>
         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
-    </form>
+    </form><br>
+    {{-- <div>
+        <h4>Want to be a part of us? Join UiTM Entrepreneurs today!</h4>
+        <a href="{{ route('seller.register') }}" class="btn btn-danger">Seller Registration</a>
+    </div> --}}
 
 
 </div>
@@ -112,6 +120,18 @@
             </span>
             @enderror
         </div>
+        <div class="form-group">
+            <label class="info-title" for="exampleInputEmail1">Registering As? <span>*</span></label>
+            <select id="user_role" name="user_role" class="form-control unicase-form-control text-input" >
+                <option value="Customer">Customer</option>
+                <option value="Seller">Seller</option>
+              </select>
+            @error('user_role')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
     </form>
 
@@ -119,22 +139,7 @@
 </div>
 <!-- create a new account -->           </div><!-- /.row -->
         </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-
-
-@include('frontend.body.brands')
-
-
-<!-- ============================================== BRANDS CAROUSEL : END ============================================== -->    </div><!-- /.container -->
-</div><!-- /.body-content -->
-
-
-
-
-
-
+    </div><!-- /.body-content -->
 @endsection
 
 

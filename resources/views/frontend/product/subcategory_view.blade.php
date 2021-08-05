@@ -111,76 +111,11 @@ Subcategory Product
             </div>
             <!-- /.sidebar-widget -->
             <!-- ============================================== PRICE SILDER : END ============================================== -->
-            <!-- ============================================== MANUFACTURES============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Manufactures</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Forever 18</a></li>
-                  <li><a href="#">Nike</a></li>
-                  <li><a href="#">Dolce & Gabbana</a></li>
-                  <li><a href="#">Alluare</a></li>
-                  <li><a href="#">Chanel</a></li>
-                  <li><a href="#">Other Brand</a></li>
-                </ul>
-                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== MANUFACTURES: END ============================================== -->
-            <!-- ============================================== COLOR============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Colors</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Red</a></li>
-                  <li><a href="#">Blue</a></li>
-                  <li><a href="#">Yellow</a></li>
-                  <li><a href="#">Pink</a></li>
-                  <li><a href="#">Brown</a></li>
-                  <li><a href="#">Teal</a></li>
-                </ul>
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== COLOR: END ============================================== -->
-            <!-- == ======= COMPARE==== ==== -->
-            <div class="sidebar-widget wow fadeInUp outer-top-vs">
-              <h3 class="section-title">Compare products</h3>
-              <div class="sidebar-widget-body">
-                <div class="compare-report">
-                  <p>You have no <span>item(s)</span> to compare</p>
-                </div>
-                <!-- /.compare-report -->
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== COMPARE: END ============================================== -->
-
 
             <!-- == ====== PRODUCT TAGS ==== ======= -->
               @include('frontend.common.product_tags')
             <!-- /.sidebar-widget -->
              <!-- == ====== END PRODUCT TAGS ==== ======= -->
-
-
-
-
-
-
-          <!----------- Testimonials------------->
-
-            @include('frontend.common.testimonials')
-            <!-- == ========== Testimonials: END ======== ========= -->
-
-
 
             <div class="home-banner"> <img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image"> </div>
           </div>
@@ -224,7 +159,7 @@ Subcategory Product
                     <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
                       <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> Position <span class="caret"></span> </button>
                       <ul role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#">position</a></li>
+                        <li role="presentation"><a href="#">Position</a></li>
                         <li role="presentation"><a href="#">Price:Lowest first</a></li>
                         <li role="presentation"><a href="#">Price:HIghest first</a></li>
                         <li role="presentation"><a href="#">Product Name:A to Z</a></li>
@@ -314,11 +249,11 @@ Subcategory Product
 
 
 @if ($product->discount_price == NULL)
-<div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>   </div>
+<div class="product-price"> <span class="price"> RM{{ $product->selling_price }} </span>   </div>
 
 @else
 
-<div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+<div class="product-price"> <span class="price"> RM{{ $product->discount_price }} </span> <span class="price-before-discount">RM{{ $product->selling_price }}</span> </div>
 @endif
 
 
@@ -403,9 +338,9 @@ Subcategory Product
 
 
             @if ($product->discount_price == NULL)
-            <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>  </div>
+            <div class="product-price"> <span class="price"> RM{{ $product->selling_price }} </span>  </div>
             @else
-<div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+<div class="product-price"> <span class="price"> RM{{ $product->discount_price }} </span> <span class="price-before-discount">RM{{ $product->selling_price }}</span> </div>
             @endif
 
             <!-- /.product-price -->
@@ -495,59 +430,10 @@ Subcategory Product
       </div>
       <!-- /.col -->
     </div>
-    <!-- /.row -->
-    <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-    <div id="brands-carousel" class="logo-slider wow fadeInUp">
-      <div class="logo-slider-inner">
-        <div id="brand-slider" class="owl-carousel brand-slider custom-carousel owl-theme">
-          <div class="item m-t-15"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand1.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item m-t-10"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand2.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand3.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand4.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand5.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand6.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand2.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand4.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand1.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-
-          <div class="item"> <a href="#" class="image"> <img data-echo="assets/images/brands/brand5.png" src="assets/images/blank.gif" alt=""> </a> </div>
-          <!--/.item-->
-        </div>
-        <!-- /.owl-carousel #logo-slider -->
-      </div>
-      <!-- /.logo-slider-inner -->
-
-    </div>
-    <!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== --> </div>
-  <!-- /.container -->
+    <!-- /.row --><!-- /.container -->
 
 </div>
 <!-- /.body-content -->
-
-
-
-
-
-
-
 
 @endsection
 

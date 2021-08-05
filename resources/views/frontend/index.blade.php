@@ -4,7 +4,7 @@
 Colcom (College Commerce)
 @endsection
 
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
   <div class="container">
@@ -54,7 +54,7 @@ Colcom (College Commerce)
           <div class="product-info">
             <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">@if(session()->get('language') == 'malay') {{ $product->product_name_my }} @else {{ $product->product_name_en }} @endif</a></h3>
             <div class="rating rateit-small"></div>
- <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span> </div>
+ <div class="product-price"> <span class="price"> RM{{ $product->selling_price }} </span> </div>
             <!-- /.product-price -->
 
           </div>
@@ -128,7 +128,7 @@ Colcom (College Commerce)
               <div class="product-info">
                 <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">@if(session()->get('language') == 'malay') {{ $product->product_name_my }} @else {{ $product->product_name_en }} @endif</a></h3>
                 <div class="rating rateit-small"></div>
-                <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span> </div>
+                <div class="product-price"> <span class="price"> RM{{ $product->selling_price }} </span> </div>
                 <!-- /.product-price -->
 
               </div>
@@ -156,37 +156,12 @@ Colcom (College Commerce)
         </div>
         <!-- /.sidebar-widget -->
         <!-- ============================================== SPECIAL DEALS : END ============================================== -->
-        <!-- ============================================== NEWSLETTER ============================================== -->
-        <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small">
-          <h3 class="section-title">Newsletters</h3>
-          <div class="sidebar-widget-body outer-top-xs">
-            <p>Sign Up for Our Newsletter!</p>
-            <form>
-              <div class="form-group">
-                <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Subscribe to our newsletter">
-              </div>
-              <button class="btn btn-primary">Subscribe</button>
-            </form>
-          </div>
-          <!-- /.sidebar-widget-body -->
         </div>
-        <!-- /.sidebar-widget -->
-        <!-- ============================================== NEWSLETTER: END ============================================== -->
-
-        <!-- == ==== Testimonials=== ===== -->
-         @include('frontend.common.testimonials')
-
-        <!-- === ======== Testimonials: END ==== =========== -->
-      </div>
       <!-- /.sidemenu-holder -->
       <!-- ============================================== SIDEBAR : END ============================================== -->
 
       <!-- ============================================== CONTENT ============================================== -->
       <div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
-
-
-
 
         <!-- === ========= SECTION – HERO ==== ======= -->
 
@@ -200,85 +175,18 @@ Colcom (College Commerce)
 
           <div class="big-text fadeInDown-1">{{ $slider->title }} </div>
           <div class="excerpt fadeInDown-2 hidden-xs"> <span>{{ $slider->description }}</span> </div>
-          <div class="button-holder fadeInDown-3"> <a href="index.php?page=single-product" class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
-        </div>
+          </div>
         <!-- /.caption -->
       </div>
       <!-- /.container-fluid -->
     </div>
     <!-- /.item -->
     @endforeach
-
-
           </div>
           <!-- /.owl-carousel -->
         </div>
 
         <!-- ==== ===== SECTION – HERO : END === ============== -->
-
-
-
-
-
-
-
-
-
-
-        <!-- ============================================== INFO BOXES ============================================== -->
-        <div class="info-boxes wow fadeInUp">
-          <div class="info-boxes-inner">
-            <div class="row">
-              <div class="col-md-6 col-sm-4 col-lg-4">
-                <div class="info-box">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <h4 class="info-box-heading green">money back</h4>
-                    </div>
-                  </div>
-                  <h6 class="text">30 Days Money Back Guarantee</h6>
-                </div>
-              </div>
-              <!-- .col -->
-
-              <div class="hidden-md col-sm-4 col-lg-4">
-                <div class="info-box">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <h4 class="info-box-heading green">free shipping</h4>
-                    </div>
-                  </div>
-                  <h6 class="text">Shipping on orders over $99</h6>
-                </div>
-              </div>
-              <!-- .col -->
-
-              <div class="col-md-6 col-sm-4 col-lg-4">
-                <div class="info-box">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <h4 class="info-box-heading green">Special Sale</h4>
-                    </div>
-                  </div>
-                  <h6 class="text">Extra $5 off on all items </h6>
-                </div>
-              </div>
-              <!-- .col -->
-            </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.info-boxes-inner -->
-
-        </div>
-        <!-- /.info-boxes -->
-        <!-- ============================================== INFO BOXES : END ============================================== -->
-
-
-
-
-
-
-
 
         <!-- = ===== SCROLL TABS =============== ========== -->
 
@@ -337,9 +245,9 @@ Colcom (College Commerce)
           <div class="description"></div>
 
          @if ($product->discount_price == NULL)
-    <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>  </div>
+    <div class="product-price"> <span class="price"> RM{{ $product->selling_price }} </span>  </div>
          @else
- <div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+ <div class="product-price"> <span class="price"> RM{{ $product->discount_price }} </span> <span class="price-before-discount">RM{{ $product->selling_price }}</span> </div>
          @endif
 
 
@@ -424,9 +332,9 @@ Colcom (College Commerce)
           <div class="description"></div>
 
          @if ($product->discount_price == NULL)
-    <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>  </div>
+    <div class="product-price"> <span class="price">RM{{ $product->selling_price }} </span>  </div>
          @else
- <div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+ <div class="product-price"> <span class="price">RM{{ $product->discount_price }} </span> <span class="price-before-discount">RM{{ $product->selling_price }}</span> </div>
          @endif
 
 
@@ -549,9 +457,9 @@ Colcom (College Commerce)
           <div class="description"></div>
 
          @if ($product->discount_price == NULL)
-    <div class="product-price"> <span class="price"> ${{ $product->selling_price }} </span>  </div>
+    <div class="product-price"> <span class="price"> RM{{ $product->selling_price }} </span>  </div>
          @else
- <div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
+ <div class="product-price"> <span class="price"> RM{{ $product->discount_price }} </span> <span class="price-before-discount">$ {{ $product->selling_price }}</span> </div>
          @endif
 
 
@@ -638,12 +546,7 @@ Colcom (College Commerce)
       <!-- /.homebanner-holder -->
       <!-- ============================================== CONTENT : END ============================================== -->
     </div>
-    <!-- /.row -->
-    <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-  @include('frontend.body.brands')
-    <!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
-  </div>
+    <!-- /.row --></div>
   <!-- /.container -->
 </div>
 <!-- /#top-banner-and-menu -->

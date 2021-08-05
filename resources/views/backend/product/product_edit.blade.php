@@ -290,7 +290,7 @@
 	<div class="col-md-6">
 
 	   	<div class="form-group">
-			<h5>Product Selling Price <span class="text-danger">*</span></h5>
+			<h5>Selling Price (RM) <span class="text-danger">*</span></h5>
 			<div class="controls">
   <input type="text" name="selling_price" class="form-control" required="" value="{{ $products->selling_price }}">
      @error('selling_price')

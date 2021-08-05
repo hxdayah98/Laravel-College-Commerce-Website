@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{{ asset('backend/images/favicon.ico') }}">
+    <link rel="icon" href="{{ asset('backend/images/logo colcom.png') }}">
 
-    <title>Easy Ecommerce Admin - Log in </title>
+    <title>College Commerce Admin Login</title>
 
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
@@ -27,7 +27,8 @@
 				<div class="row justify-content-center no-gutters">
 					<div class="col-lg-4 col-md-5 col-12">
 	<div class="content-top-agile p-10">
-		<h2 class="text-white">Get started with Us</h2>
+        <p class="text-white-50"><img src="{{ asset('/upload/logo/1706281796947709.png') }}"></p>
+		<h2 class="text-white">Welcome to Colcom Admin</h2>
 		<p class="text-white-50">Sign in to start your session</p>
 	</div>
 	<div class="p-30 rounded30 box-shadowed b-2 b-dashed">
@@ -61,7 +62,7 @@
 				<!-- /.col -->
 				<div class="col-6">
 				 <div class="fog-pwd text-right">
-		 <a href="{{ route('password.request') }}" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
+		 <a href="{{ route('password.request') }}" class="text-white hover-info"><i class="ion ion-locked"></i> Forgot Password?</a><br>
 				  </div>
 				</div>
 				<!-- /.col -->

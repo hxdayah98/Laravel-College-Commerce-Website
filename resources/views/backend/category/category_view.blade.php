@@ -27,8 +27,8 @@
 						<thead>
 							<tr>
 								<th>Category Icon </th>
-								<th>Category En</th>
-								<th>Category Hin </th>
+								<th>Category (EN)</th>
+								<th>Category (MY)</th>
 								<th>Action</th>
 
 							</tr>
@@ -113,7 +113,7 @@
 
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add">
 						</div>
 					</form>
 

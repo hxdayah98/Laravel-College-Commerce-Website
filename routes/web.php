@@ -4,6 +4,7 @@ use App\Models\User;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\HomeBlogController;
 use App\Http\Controllers\Frontend\ShopController;
+use App\Http\Controllers\Frontend\AutoAddressController;
 
 use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\User\CartPageController;
@@ -31,8 +33,9 @@ use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\StripeController;
 use App\Http\Controllers\User\CashController;
 use App\Http\Controllers\User\ReviewController;
-
 use App\Http\Controllers\User\AllUserController;
+
+use App\Mail\NewOrderMessage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,10 +52,7 @@ Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 	Route::post('/login',[AdminController::class, 'store'])->name('admin.login');
 });
 
-
 Route::middleware(['auth:admin'])->group(function(){
-
-
 
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
@@ -93,6 +93,9 @@ Route::get('/user/change/password', [IndexController::class, 'UserChangePassword
 
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
 
+// Seller All Routes
+Route::get('/seller/register', [AdminController::class, 'sellerRegister'])->name('seller.register');
+Route::get('/seller/registration', [AdminController::class, 'seller-register'])->name('seller_register');
 
 // Admin Brand All Routes
 
@@ -346,7 +349,7 @@ Route::get('/checkout', [CartController::class, 'CheckoutCreate'])->name('checko
 
 Route::get('/district-get/ajax/{state_id}', [CheckoutController::class, 'DistrictGetAjax']);
 
-Route::get('/state-get/ajax/{district_id}', [CheckoutController::class, 'CityGetAjax']);
+Route::get('/city-get/ajax/{district_id}', [CheckoutController::class, 'CityGetAjax']);
 
 Route::post('/checkout/store', [CheckoutController::class, 'CheckoutStore'])->name('checkout.store');
 
@@ -408,8 +411,8 @@ Route::post('/search/by/year', [ReportController::class, 'ReportByYear'])->name(
 // Admin Get All User Routes
 Route::prefix('alluser')->group(function(){
 
-Route::get('/view', [AdminProfileController::class, 'AllUsers'])->name('all-users');
-
+Route::get('/customer/view', [AdminProfileController::class, 'AllCustomers'])->name('all-users');
+Route::get('/delete/{id}', [AdminProfileController::class, 'CustDelete'])->name('cust.delete');
 
 });
 
@@ -433,6 +436,7 @@ Route::get('/list/post', [BlogController::class, 'ListBlogPost'])->name('list.po
 Route::get('/add/post', [BlogController::class, 'AddBlogPost'])->name('add.post');
 
 Route::post('/post/store', [BlogController::class, 'BlogPostStore'])->name('post-store');
+Route::get('/delete/{id}', [BlogController::class, 'BlogDelete'])->name('blog.delete');
 
 });
 
@@ -451,24 +455,8 @@ Route::prefix('setting')->group(function(){
 
 Route::get('/site', [SiteSettingController::class, 'SiteSetting'])->name('site.setting');
 Route::post('/site/update', [SiteSettingController::class, 'SiteSettingUpdate'])->name('update.sitesetting');
-
-Route::get('/seo', [SiteSettingController::class, 'SeoSetting'])->name('seo.setting');
-
-Route::post('/seo/update', [SiteSettingController::class, 'SeoSettingUpdate'])->name('update.seosetting');
 });
 
-
-
-// Admin Return Order Routes
-Route::prefix('return')->group(function(){
-
-Route::get('/admin/request', [ReturnController::class, 'ReturnRequest'])->name('return.request');
-
-Route::get('/admin/return/approve/{order_id}', [ReturnController::class, 'ReturnRequestApprove'])->name('return.approve');
-
-Route::get('/admin/all/request', [ReturnController::class, 'ReturnAllRequest'])->name('all.request');
-
-});
 
 /// Frontend Product Review Routes
 
@@ -526,3 +514,9 @@ Route::post('search-product', [IndexController::class, 'SearchProduct']);
 // Shop Page Route
 Route::get('/shop', [ShopController::class, 'ShopPage'])->name('shop.page');
 Route::post('/shop/filter', [ShopController::class, 'ShopFilter'])->name('shop.filter');
+
+Route::get('send-mail', function () {
+    Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage($details));
+});
+
+Route::get('auto-complete-address', [AutoAddressController::class, 'googleAutoAddress']);

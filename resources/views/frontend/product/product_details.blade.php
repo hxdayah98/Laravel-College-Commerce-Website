@@ -19,8 +19,8 @@
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Clothing</a></li>
-				<li class='active'>Floral Print Buttoned</li>
+				<li><a href="#">Product</a></li>
+				<li class='active'>{{ $product->product_name_my }}</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
@@ -30,59 +30,13 @@
 		<div class='row single-product'>
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
-				<div class="home-banner outer-top-n">
-<img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image">
-</div>
+
 
 
 
     	<!-- ====== === HOT DEALS ==== ==== -->
    @include('frontend.common.hot_deals')
 <!-- ===== ===== HOT DEALS: END ====== ====== -->
-
-<!-- ============================================== NEWSLETTER ============================================== -->
-<div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small outer-top-vs">
-	<h3 class="section-title">Newsletters</h3>
-	<div class="sidebar-widget-body outer-top-xs">
-		<p>Sign Up for Our Newsletter!</p>
-        <form>
-        	 <div class="form-group">
-			    <label class="sr-only" for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Subscribe to our newsletter">
-			  </div>
-			<button class="btn btn-primary">Subscribe</button>
-		</form>
-	</div><!-- /.sidebar-widget-body -->
-</div><!-- /.sidebar-widget -->
-<!-- ============================================== NEWSLETTER: END ============================================== -->
-
-<!-- ============================================== Testimonials============================================== -->
-<div class="sidebar-widget  wow fadeInUp outer-top-vs ">
-	<div id="advertisement" class="advertisement">
-        <div class="item">
-            <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member1.png') }} " alt="Image"></div>
-		<div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-		<div class="clients_author">John Doe	<span>Abc Company</span>	</div><!-- /.container-fluid -->
-        </div><!-- /.item -->
-
-         <div class="item">
-         	<div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member3.png') }} " alt="Image"></div>
-		<div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-		<div class="clients_author">Stephen Doe	<span>Xperia Designs</span>	</div>
-        </div><!-- /.item -->
-
-        <div class="item">
-            <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member2.png') }} " alt="Image"></div>
-		<div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-		<div class="clients_author">Saraha Smith	<span>Datsun &amp; Co</span>	</div><!-- /.container-fluid -->
-        </div><!-- /.item -->
-
-    </div><!-- /.owl-carousel -->
-</div>
-
-<!-- ===== ========== Testimonials: END ======== =============== -->
-
-
 
 				</div>
 			</div><!-- /.sidebar -->
@@ -225,10 +179,10 @@
 	<div class="col-sm-6">
 		<div class="price-box">
        @if ($product->discount_price == NULL)
-       <span class="price">${{ $product->selling_price }}</span>
+       <span class="price">RM{{ $product->selling_price }}</span>
        @else
-       <span class="price">${{ $product->discount_price }}</span>
-			<span class="price-strike">${{ $product->selling_price }}</span>
+       <span class="price">RM{{ $product->discount_price }}</span>
+			<span class="price-strike">RM{{ $product->selling_price }}</span>
        @endif
 
 
@@ -302,13 +256,6 @@
 
  <!--     /// End Add Product Color And Product Size ///// -->
 
-
-
-
-
-
-
-
 	<div class="quantity-container info-container">
 		<div class="row">
 
@@ -357,7 +304,6 @@
 							<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
 								<li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
 								<li><a data-toggle="tab" href="#review">REVIEW</a></li>
-								<li><a data-toggle="tab" href="#tags">TAGS</a></li>
 							</ul><!-- /.nav-tabs #product-tabs -->
 						</div>
 						<div class="col-sm-9">
@@ -537,31 +483,6 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 </div><!-- /.product-tab -->
 </div><!-- /.tab-pane -->
 
-<div id="tags" class="tab-pane">
-<div class="product-tag">
-
-	<h4 class="title">Product Tags</h4>
-	<form role="form" class="form-inline form-cnt">
-		<div class="form-container">
-
-			<div class="form-group">
-				<label for="exampleInputTag">Add Your Tags: </label>
-				<input type="email" id="exampleInputTag" class="form-control txt">
-
-
-			</div>
-
-			<button class="btn btn-upper btn-primary" type="submit">ADD TAGS</button>
-		</div><!-- /.form-container -->
-	</form><!-- /.form-cnt -->
-
-	<form role="form" class="form-inline form-cnt">
-		<div class="form-group">
-			<label>&nbsp;</label>
-			<span class="text col-md-offset-3">Use spaces to separate tags. Use single quotes (') for phrases.</span>
-		</div>
-	</form><!-- /.form-cnt -->
-
 									</div><!-- /.product-tab -->
 								</div><!-- /.tab-pane -->
 
@@ -572,7 +493,7 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
 
 				<!-- ===== ======= UPSELL PRODUCTS ==== ========== -->
 <section class="section featured-product wow fadeInUp">
-	<h3 class="section-title">Releted products</h3>
+	<h3 class="section-title">Related products</h3>
 	<div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
 
 
@@ -602,14 +523,14 @@ $reviews = App\Models\Review::where('product_id',$product->id)->latest()->limit(
  @if ($product->discount_price == NULL)
 <div class="product-price">
 				<span class="price">
-					${{ $product->selling_price }}	 </span>
+					RM{{ $product->selling_price }}	 </span>
 			</div><!-- /.product-price -->
  @else
 
 <div class="product-price">
 				<span class="price">
-					${{ $product->discount_price }}	 </span>
-			  <span class="price-before-discount">$ {{ $product->selling_price }}</span>
+					RM{{ $product->discount_price }}	 </span>
+			  <span class="price-before-discount">RM{{ $product->selling_price }}</span>
 			</div><!-- /.product-price -->
  @endif
 

@@ -178,7 +178,7 @@ My Checkout
 		 <li>
 		 	@if(Session::has('coupon'))
 
-<strong>Sub Total: </strong> ${{ $cartTotal }} <hr>
+<strong>Sub Total: </strong> RM{{ $cartTotal }} <hr>
 
 <strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
 ( {{ session()->get('coupon')['coupon_discount'] }} % )
@@ -293,7 +293,7 @@ My Checkout
             var district_id = $(this).val();
             if(district_id) {
                 $.ajax({
-                    url: "{{  url('/state-get/ajax') }}/"+district_id,
+                    url: "{{  url('/city-get/ajax') }}/"+district_id,
                     type:"GET",
                     dataType:"json",
                     success:function(data) {

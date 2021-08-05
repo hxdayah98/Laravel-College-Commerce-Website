@@ -73,7 +73,7 @@ Stripe Payment Page
 		 <li>
 		 	@if(Session::has('coupon'))
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>Sub Total: </strong> RM{{ $cartTotal }} <hr>
 
 <strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
 ( {{ session()->get('coupon')['coupon_discount'] }} % )
@@ -88,9 +88,9 @@ Stripe Payment Page
 
 		 	@else
 
-<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+<strong>SubTotal: </strong> RM{{ $cartTotal }} <hr>
 
-<strong>Grand Total : </strong> ${{ $cartTotal }} <hr>
+<strong>Grand Total : </strong> RM{{ $cartTotal }} <hr>
 
 
 		 	@endif
@@ -165,16 +165,6 @@ Stripe Payment Page
 </form>
 			</div><!-- /.row -->
 		</div><!-- /.checkout-box -->
-		<!-- === ===== BRANDS CAROUSEL ==== ======== -->
-
-
-
-
-
-
-
-
-<!-- ===== == BRANDS CAROUSEL : END === === -->
 </div><!-- /.container -->
 </div><!-- /.body-content -->
 

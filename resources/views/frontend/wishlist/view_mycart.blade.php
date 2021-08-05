@@ -2,20 +2,21 @@
 @section('content')
 
 @section('title')
-My Cart Page 
+My Cart Page
 @endsection
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 <div class="breadcrumb">
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
 				<li><a href="home.html">Home</a></li>
-				<li class='active'>MyCart</li>
+				<li class='active'>My Cart</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
-</div><!-- /.breadcrumb --> 
+</div><!-- /.breadcrumb -->
 
 <div class="body-content">
 	<div class="container">
@@ -36,11 +37,11 @@ My Cart Page
 				</tr>
 			</thead><!-- /thead -->
 			<tbody id="cartPage">
-		
+
 			</tbody>
 		</table>
 	</div>
-</div>		
+</div>
 
 
 <div class="col-md-4 col-sm-12 estimate-ship-tax">
@@ -53,7 +54,7 @@ My Cart Page
 
 	@else
 
-	
+
 	<table class="table" id="couponField">
 		<thead>
 			<tr>
@@ -88,14 +89,14 @@ My Cart Page
 <div class="col-md-4 col-sm-12 cart-shopping-total">
 	<table class="table">
 		<thead id="couponCalField">
-			
+
 		</thead><!-- /thead -->
 		<tbody>
 				<tr>
 					<td>
 						<div class="cart-checkout-btn pull-right">
-		 <a href="{{ route('checkout') }}" type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</a>
-							 
+		 <a href="{{ route('checkout') }}" type="submit" class="btn btn-primary checkout-btn">PROCEED TO CHECKOUT</a>
+
 						</div>
 					</td>
 				</tr>
@@ -118,8 +119,7 @@ My Cart Page
 
 
 <br>
- @include('frontend.body.brands')
 </div>
 
- 
+
 @endsection

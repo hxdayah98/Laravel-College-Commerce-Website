@@ -30,8 +30,8 @@
 
 								<th>Post Category  </th>
 								<th>Post Image </th>
-								<th>Post Title En </th>
-								<th>Post Title Hin </th>
+								<th>Post Title (EN)</th>
+								<th>Post Title (MY)</th>
 								<th>Action</th>
 
 							</tr>
@@ -46,7 +46,7 @@
 		 <td>{{ $item->post_title_my }}</td>
 		<td width="20%">
  <a href="{{ route('blog.category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
- <a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
+ <a href="{{ route('blog.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 		</td>
 

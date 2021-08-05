@@ -95,17 +95,19 @@
 		 </div>
 
          <div class="form-group">
-            <h5><b>District Select</b>  <span class="text-danger">*</span></h5>
+            <h5>District Select <span class="text-danger">*</span></h5>
             <div class="controls">
-                <select name="district_id" class="form-control" required="" >
+                <select name="district_id" class="form-control"  >
                     <option value="" selected="" disabled="">Select District</option>
-
+                    @foreach($district as $dis)
+                    <option value="{{ $dis->id }}">{{ $dis->district_name }}</option>
+                    @endforeach
                 </select>
                 @error('district_id')
              <span class="text-danger">{{ $message }}</span>
              @enderror
              </div>
-                 </div> <!-- // end form group -->
+                 </div>
 
 	 <div class="form-group">
 		<h5>City Name  <span class="text-danger">*</span></h5>

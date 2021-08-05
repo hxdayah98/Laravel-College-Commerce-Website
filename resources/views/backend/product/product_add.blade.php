@@ -110,7 +110,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Name En <span class="text-danger">*</span></h5>
+			<h5>Product Name (EN)<span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="product_name_en" class="form-control" required="">
      @error('product_name_en')
@@ -173,7 +173,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Tags En <span class="text-danger">*</span></h5>
+			<h5>Product Tags (EN)<span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_tags_en" class="form-control" value="Lorem,Ipsum,Amet" data-role="tagsinput" required="">
      @error('product_tags_en')
@@ -185,10 +185,6 @@
 			</div> <!-- end col md 4 -->
 
 		</div> <!-- end 3RD row  -->
-
-
-
-
 
 
 <div class="row"> <!-- start 4th row  -->
@@ -209,7 +205,7 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-			<h5>Product Size En <span class="text-danger">*</span></h5>
+			<h5>Product Size (EN)<span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_size_en" class="form-control" value="Small,Midium,Large" data-role="tagsinput" required="">
      @error('product_size_en')
@@ -243,7 +239,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Product Color En <span class="text-danger">*</span></h5>
+			<h5>Product Color (EN)<span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="product_color_en" class="form-control" value="red,Black,Amet" data-role="tagsinput" required="">
      @error('product_color_en')
@@ -272,7 +268,7 @@
 			<div class="col-md-4">
 
 				<div class="form-group">
-			<h5>Product Selling Price <span class="text-danger">*</span></h5>
+			<h5>Selling Price (RM) <span class="text-danger">*</span></h5>
 			<div class="controls">
 				<input type="text" name="selling_price" class="form-control" required="">
      @error('selling_price')
@@ -292,7 +288,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Product Discount Price <span class="text-danger">*</span></h5>
+			<h5>Price After Discount (RM)<span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="discount_price" class="form-control"  required="">
      @error('discount_price')
@@ -323,7 +319,7 @@
 			<div class="col-md-4">
 
 	    <div class="form-group">
-			<h5>Multiple Image <span class="text-danger">*</span></h5>
+			<h5>Image(s)<span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg" required="" >
      @error('multi_img')
@@ -338,10 +334,6 @@
 			</div> <!-- end col md 4 -->
 
 		</div> <!-- end 6th row  -->
-
-
-
-
 
 <div class="row"> <!-- start 7th row  -->
 			<div class="col-md-6">
@@ -368,9 +360,6 @@
 			</div> <!-- end col md 6 -->
 
 		</div> <!-- end 7th row  -->
-
-
-
 
 
 <div class="row"> <!-- start 8th row  -->
@@ -444,25 +433,6 @@
 			</div>
 		</div>
 		 </div>
-
-
-
-<div class="col-md-6">
-
-	    <div class="form-group">
-			<h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>
-			<div class="controls">
-	 <input type="file" name="file" class="form-control" >
-
-	 		 </div>
-		</div>
-
-
-			</div> <!-- end col md 4 -->
-
-
-
-
 
 						<div class="text-xs-right">
 <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Product">

@@ -5,14 +5,14 @@ $categories = App\Models\Category::orderBy('category_name_en','ASC')->get();
 
 
  <div class="side-menu animate-dropdown outer-bottom-xs">
-          <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> @if(session()->get('language') == 'english') Categories @else Kategori @endif</div>
+          <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> @if(session()->get('language') == 'malay') Kategori @else Categories @endif</div>
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
 
 
               @foreach($categories as $category)
               <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon {{ $category->category_icon }}" aria-hidden="true"></i>
-@if(session()->get('language') == 'english') {{ $category->category_name_en }} @else {{ $category->category_name_my }} @endif
+@if(session()->get('language') == 'malay') {{ $category->category_name_my }} @else {{ $category->category_name_en }} @endif
                 </a>
                 <ul class="dropdown-menu mega-menu">
                   <li class="yamm-content">

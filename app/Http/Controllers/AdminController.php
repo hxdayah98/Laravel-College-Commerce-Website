@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function __construct(StatefulGuard $guard)
     {
         $this->guard = $guard;
-         
+
     }
 
     public function loginForm(){
@@ -110,5 +110,9 @@ class AdminController extends Controller
 
         return app(LogoutResponse::class);
     }
+
+    public function sellerRegister(){
+		return view('auth.seller_register');
+	}
 }
 

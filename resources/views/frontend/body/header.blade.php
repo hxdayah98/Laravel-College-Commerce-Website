@@ -6,19 +6,18 @@
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
-            <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i> @if(session()->get('language') == 'english')Wishlist @else Senarai Impian @endif</a></li>
-            <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i> @if(session()->get('language') == 'english')My Cart @else Cart Saya @endif</a></li>
-            <li><a href="{{ route('checkout') }}"><i class="icon fa fa-check"></i> @if(session()->get('language') == 'english')Checkout @else Cek Keluar @endif</a></li>
+            <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i> @if(session()->get('language') == 'malay')Senarai Impian @else Wishlist @endif</a></li>
+            <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i> @if(session()->get('language') == 'malay')Cart Saya @else My Cart @endif</a></li>
 
- <li><a href="" type="button" data-toggle="modal" data-target="#ordertraking"><i class="icon fa fa-check"></i> @if(session()->get('language') == 'english')Order Tracking @else Trek Bungkusan @endif</a></li>
+ <li><a href="" type="button" data-toggle="modal" data-target="#ordertraking"><i class="icon fa fa-check"></i> @if(session()->get('language') == 'malay')Trek Bungkusan @else Order Tracking @endif</a></li>
 
             <li>
 
 
    @auth
-   <a href="{{ route('login') }}"><i class="icon fa fa-user"></i> @if(session()->get('language') == 'english')User Profile @else Profil Pengguna @endif</a>
+   <a href="{{ route('login') }}"><i class="icon fa fa-user"></i> @if(session()->get('language') == 'malay')Profil Pengguna @else User Profile @endif</a>
    @else
-   <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>@if(session()->get('language') == 'english') Login/Register @else Log Masuk/Daftar @endif</a>
+   <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>@if(session()->get('language') == 'malay') Log Masuk/Daftar @else Login/Register @endif</a>
    @endauth
 
 
@@ -75,17 +74,7 @@
             <form method="post" action="{{ route('product.search') }}">
               @csrf
               <div class="control-group">
-                <ul class="categories-filter animate-dropdown">
-                  <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu" >
-                      <li class="menu-header">Computer</li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Clothing</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Electronics</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Shoes</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Watches</a></li>
-                    </ul>
-                  </li>
-                </ul>
+
      <input class="search-field" onfocus="search_result_show()" onblur="search_result_hide()" id="search" name="search" placeholder="Search here..." />
                 <button class="search-button" type="submit"></button> </div>
             </form>
@@ -121,10 +110,10 @@
 
 
                 <div class="clearfix cart-total">
-                  <div class="pull-right"> <span class="text"> @if(session()->get('language') == 'english')Sub Total : @else Jumlah Keseluruhan : @endif</span>
+                  <div class="pull-right"> <span class="text"> @if(session()->get('language') == 'malay')Jumlah Keseluruhan : @else Sub Total : @endif</span>
                     <span class='price'  id="cartSubTotal">  </span> </div>
                   <div class="clearfix"></div>
-                  <a href="{{ route('checkout') }}" class="btn btn-upper btn-primary btn-block m-t-20"> @if(session()->get('language') == 'english')Checkout @else Cek Keluar @endif</a> </div>
+                  <a href="{{ route('mycart') }}" class="btn btn-upper btn-primary btn-block m-t-20"> @if(session()->get('language') == 'malay')Cek Keluar @else Checkout @endif</a> </div>
                 <!-- /.cart-total-->
 
               </li>
@@ -161,7 +150,7 @@
 @if(session()->get('language') == 'malay') Menu Utama @else Home @endif
   </a> </li>
 
-  <li> <a href="{{ route('shop.page')}}"> @if(session()->get('language') == 'english')All @else Semua @endif</a> </li>
+  <li> <a href="{{ route('shop.page')}}"> @if(session()->get('language') == 'malay')Semua @else All @endif</a> </li>
 <!--   // Get Category Table Data -->
   @php
   $categories = App\Models\Category::orderBy('category_name_en','ASC')->get();
@@ -169,8 +158,8 @@
 
 
  @foreach($categories as $category)
-  <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
-    @if(session()->get('language') == 'english') {{ $category->category_name_en }} @else {{ $category->category_name_my }} @endif
+  <li class="dropdown yamm mega-menu"> <a href="" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+    @if(session()->get('language') == 'malay') {{ $category->category_name_my }} @else {{ $category->category_name_en }} @endif
     </a>
     <ul class="dropdown-menu container">
       <li>
@@ -246,7 +235,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> @if(session()->get('language') == 'english')Track Your Order @else Trek Bungkusan Anda @endif</h5>
+        <h5 class="modal-title" id="exampleModalLabel"> @if(session()->get('language') == 'malay')Trek Bungkusan Anda @else Track Your Order @endif</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -260,7 +249,7 @@
           <input type="text" name="code" required="" class="form-control" placeholder="Your Order Invoice Number">
          </div>
 
-         <button class="btn btn-danger" type="submit" style="margin-left: 17px;"> @if(session()->get('language') == 'english') Track Now @else Trek Sekarang @endif</button>
+         <button class="btn btn-danger" type="submit" style="margin-left: 17px;"> @if(session()->get('language') == 'malay') Trek Sekarang @else Track Now @endif</button>
 
         </form>
 

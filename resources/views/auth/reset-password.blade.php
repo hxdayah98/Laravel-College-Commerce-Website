@@ -16,12 +16,12 @@
     <div class="container">
         <div class="sign-in-page">
             <div class="row">
-                <!-- Sign-in -->            
+                <!-- Sign-in -->
 <div class="col-md-6 col-sm-6 sign-in">
     <h4 class="">Reset Password </h4>
-    
-     
-   
+
+
+
 
      <form method="POST" action="{{ route('password.update') }}">
             @csrf
@@ -43,29 +43,19 @@
             <label class="info-title" for="exampleInputEmail1">Confirm Password <span>*</span></label>
             <input type="password" id="password_confirmation" name="password_confirmation" class="form-control unicase-form-control text-input">
         </div>
-        
-        
+
+
         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Reset Password</button>
-    </form>   
+    </form>
 
 
 </div>
 <!-- Sign-in -->
- 
-<!-- create a new account -->   
+
+<!-- create a new account -->
  </div><!-- /.row -->
         </div><!-- /.sigin-in-->
-        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-
-
-
-
-@include('frontend.body.brands')
-
-
-<!-- ============================================== BRANDS CAROUSEL : END ============================================== -->    </div><!-- /.container -->
 </div><!-- /.body-content -->
- 
 
 @endsection
 

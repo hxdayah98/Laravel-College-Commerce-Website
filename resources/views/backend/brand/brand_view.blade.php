@@ -26,8 +26,8 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Brand En </th>
-								<th>Brand Hin</th>
+								<th>Brand (EN)</th>
+								<th>Brand (MY)</th>
 								<th>Image</th>
 								<th>Action</th>
 
@@ -38,7 +38,7 @@
 	 <tr>
 		<td>{{ $item->brand_name_en }}</td>
 		<td>{{ $item->brand_name_my }}</td>
-		<td><img src="{{ asset($item->brand_image) }}" style="width: 70px; height: 40px;"> </td>
+		<td><img src="{{ asset($item->brand_image) }}" style="width: 40px; height: 40px;"> </td>
 		<td>
  <a href="{{ route('brand.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
  <a href="{{ route('brand.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
@@ -114,7 +114,7 @@
 
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add New">
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add">
 						</div>
 					</form>
 
