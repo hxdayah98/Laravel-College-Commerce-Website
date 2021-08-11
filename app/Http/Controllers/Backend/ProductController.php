@@ -146,7 +146,6 @@ class ProductController extends Controller
 		$imgs = $request->multi_img;
 		foreach ($imgs as $id => $img) {
 	    $imgDel = MultiImg::findOrFail($id);
-	    unlink($imgDel->photo_name);
     	$make_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
     	Image::make($img)->resize(917,1000)->save('upload/products/multi-image/'.$make_name);
     	$uploadPath = 'upload/products/multi-image/'.$make_name;
@@ -167,7 +166,6 @@ class ProductController extends Controller
  public function ThumbnailImageUpdate(Request $request){
  	$pro_id = $request->id;
  	$oldImage = $request->old_img;
- 	unlink($oldImage);
     $image = $request->file('product_thumbnail');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
     	Image::make($image)->resize(917,1000)->save('upload/products/thumbnail/'.$name_gen);
