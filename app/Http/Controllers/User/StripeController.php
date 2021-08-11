@@ -76,6 +76,7 @@ class StripeController extends Controller
      	];
 
      	Mail::to($request->email)->send(new OrderMail($data));
+         Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage($details));
 
      // End Send Email
 
@@ -107,7 +108,7 @@ class StripeController extends Controller
 		);
 
 
-		return redirect()->route('send-mail')->with($notification);
+		return redirect()->route('dashboard')->with($notification);
 
 
     } // end method
