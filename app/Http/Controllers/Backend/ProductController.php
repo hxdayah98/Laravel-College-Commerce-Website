@@ -28,8 +28,8 @@ class ProductController extends Controller
 
         $image = $request->file('product_thumbnail');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	Image::make($image)->resize(917,1000)->save('upload/products/thumbnail/'.$name_gen);
-    	$save_url = 'upload/products/thumbnail/'.$name_gen;
+    	Image::make($image)->resize(917,1000)->save('public/upload/products/thumbnail/'.$name_gen);
+    	$save_url = 'public/upload/products/thumbnail/'.$name_gen;
 
       $product_id = Product::insertGetId([
       	'brand_id' => $request->brand_id,
@@ -67,8 +67,8 @@ class ProductController extends Controller
       $images = $request->file('multi_img');
       foreach ($images as $img) {
       	$make_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
-    	Image::make($img)->resize(917,1000)->save('upload/products/multi-image/'.$make_name);
-    	$uploadPath = 'upload/products/multi-image/'.$make_name;
+    	Image::make($img)->resize(917,1000)->save('public/upload/products/multi-image/'.$make_name);
+    	$uploadPath = 'public/upload/products/multi-image/'.$make_name;
     	MultiImg::insert([
     		'product_id' => $product_id,
     		'photo_name' => $uploadPath,
