@@ -413,7 +413,9 @@
 	</div>
 </div>
 
-
+@php
+    $aid = Auth:id();
+@endphp
 
 <div class="col-md-6">
 	<div class="form-group">
@@ -431,7 +433,7 @@
 			</div>
 		</div>
 		 </div>
-         <input type="text" name="admin_id" value="{{ $prodAdmin->id }}" disabled>
+         <input type="text" name="admin_id" value="{{ $aid }}" disabled>
 
 						<div class="text-xs-right">
 <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Product">
