@@ -10,7 +10,7 @@
 		  <div class="box">
 			<div class="box-header with-border">
 			  <h4 class="box-title">Site Setting Page </h4>
-			  
+
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
@@ -34,7 +34,7 @@
 
 
 	<div class="form-group">
-		<h5>Phone One <span class="text-danger">*</span></h5>
+		<h5>Contact Number 1<span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="phone_one" class="form-control" value="{{ $setting->phone_one }}" > </div>
 	</div>
@@ -42,7 +42,7 @@
 
 
 	<div class="form-group">
-		<h5>Phone Two <span class="text-danger">*</span></h5>
+		<h5>Contact Number 2<span class="text-danger">*</span></h5>
 		<div class="controls">
 	 <input type="text" name="phone_two" class="form-control"  value="{{ $setting->phone_two }}"  > </div>
 	</div>
@@ -92,16 +92,16 @@
 	 <input type="text" name="youtube" class="form-control"  value="{{ $setting->youtube }}"  > </div>
 	</div>
 
-					
-				</div> <!-- end cold md 6 --> 
-				
-			</div>	<!-- end row 	 -->	
 
- 
-	  
+				</div> <!-- end cold md 6 -->
+
+			</div>	<!-- end row 	 -->
+
+
+
 
 			 <div class="text-xs-right">
-	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">					 
+	<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
 						</div>
 					</form>
 
@@ -115,11 +115,11 @@
 		  <!-- /.box -->
 
 		</section>
- 
+
 
 
 	  </div>
 
- 
+
 
 @endsection
