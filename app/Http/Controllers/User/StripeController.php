@@ -35,7 +35,6 @@ class StripeController extends Controller
 	  'currency' => 'myr',
 	  'description' => 'Colcom Online Store',
 	  'source' => $token,
-	  'metadata' => 'order_id',
 	]);
 
 	  // dd($charge);
