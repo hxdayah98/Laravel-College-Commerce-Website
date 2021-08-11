@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Review;
 use Auth;
-use Carbon\Carbon; 
+use Carbon\Carbon;
 
 
 class ReviewController extends Controller
@@ -39,7 +39,7 @@ class ReviewController extends Controller
 		return redirect()->back()->with($notification);
 
 
-    } // end mehtod 
+    } // end mehtod
 
 
 
@@ -48,7 +48,7 @@ class ReviewController extends Controller
     	$review = Review::where('status',0)->orderBy('id','DESC')->get();
     	return view('backend.review.pending_review',compact('review'));
 
-    } // end method 
+    } // end method
 
 
 
@@ -62,7 +62,7 @@ class ReviewController extends Controller
         );
 
         return redirect()->back()->with($notification);
-    } // end mehtod 
+    } // end mehtod
 
 
     public function PublishReview(){
@@ -83,9 +83,8 @@ class ReviewController extends Controller
 
         return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
 }
- 

@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			   
-		 
+
+
 
 			<div class="col-12">
 
@@ -32,7 +32,7 @@
 								<th>Product  </th>
 								<th>Status </th>
 								<th>Action</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -48,6 +48,7 @@
       <span class="badge badge-pill badge-primary">Pending </span>
        @elseif($item->status == 1)
        <span class="badge badge-pill badge-success">Publish </span>
+       <a href="{{ route('review.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
 		@endif
 
 		  </td>
@@ -55,11 +56,11 @@
 		<td width="25%">
   <a href="{{ route('review.approve',$item->id) }}" class="btn btn-danger">Approve </a>
 		</td>
-							 
+
 	 </tr>
 	  @endforeach
 						</tbody>
-						 
+
 					  </table>
 					</div>
 				</div>
@@ -67,22 +68,22 @@
 			  </div>
 			  <!-- /.box -->
 
-			          
+
 			</div>
 			<!-- /.col -->
 
- 
 
- 
+
+
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
-  
+
 
 
 

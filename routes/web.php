@@ -461,7 +461,7 @@ Route::get('/admin/approve/{id}', [ReviewController::class, 'ReviewApprove'])->n
 
 Route::get('/publish', [ReviewController::class, 'PublishReview'])->name('publish.review');
 
-Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('delete.review');
+Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('review.delete');
 
 });
 
@@ -507,5 +507,3 @@ Route::post('/shop/filter', [ShopController::class, 'ShopFilter'])->name('shop.f
 Route::get('send-mail', function () {
     Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage($details));
 });
-
-Route::get('auto-complete-address', [AutoAddressController::class, 'googleAutoAddress']);
