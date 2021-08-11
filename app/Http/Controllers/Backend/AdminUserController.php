@@ -48,7 +48,6 @@ class AdminUserController extends Controller
 
 		'shipping' => $request->shipping,
 		'blog' => $request->blog,
-		'setting' => $request->setting,
 		'returnorder' => $request->returnorder,
 		'review' => $request->review,
 

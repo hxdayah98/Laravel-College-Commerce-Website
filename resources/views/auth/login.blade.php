@@ -120,18 +120,7 @@ College Commerce (Colcom) Login
             </span>
             @enderror
         </div>
-        <div class="form-group">
-            <label class="info-title" for="exampleInputEmail1">Registering As? <span>*</span></label>
-            <select id="user_role" name="user_role" class="form-control unicase-form-control text-input" >
-                <option value="Customer">Customer</option>
-                <option value="Seller">Seller</option>
-              </select>
-            @error('user_role')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
+
         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
     </form>
 
