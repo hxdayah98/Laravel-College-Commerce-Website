@@ -107,7 +107,7 @@ class StripeController extends Controller
 		);
 
 
-		return redirect()->route('send-email')->with($notification);
+		return redirect()->route('send-mail')->with($notification);
 
 
     } // end method
