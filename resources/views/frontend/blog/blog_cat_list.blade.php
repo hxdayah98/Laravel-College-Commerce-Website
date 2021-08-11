@@ -62,21 +62,6 @@ Blog Category Page
 </div><!-- /.filters-container -->				</div>
 				<div class="col-md-3 sidebar">
 
-
-
-					<div class="sidebar-module-container">
-						<div class="search-area outer-bottom-small">
-    <form>
-        <div class="control-group">
-            <input placeholder="Type to search" class="search-field">
-            <a href="#" class="search-button"></a>
-        </div>
-    </form>
-</div>
-
-<div class="home-banner outer-top-n outer-bottom-xs">
-<img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }} " alt="Image">
-</div>
 				<!-- ======== ====CATEGORY======= === -->
 <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
 	<h3 class="section-title">Blog Category</h3>
