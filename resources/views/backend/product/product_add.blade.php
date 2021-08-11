@@ -414,7 +414,7 @@
 </div>
 
 @php
-    $aid = Auth:id();
+    $aid = Auth::id();
 @endphp
 
 <div class="col-md-6">
