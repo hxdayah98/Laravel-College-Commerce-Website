@@ -4,7 +4,7 @@
 Sub-Subcategory Product
 @endsection
 
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
 

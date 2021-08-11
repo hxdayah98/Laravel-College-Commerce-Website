@@ -4,6 +4,8 @@
 Subcategory Product
 @endsection
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 <div class="breadcrumb">
   <div class="container">
     <div class="breadcrumb-inner">

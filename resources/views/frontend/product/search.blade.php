@@ -5,7 +5,7 @@ Product Search Page
 @endsection
 
 
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
 <div class="breadcrumb">

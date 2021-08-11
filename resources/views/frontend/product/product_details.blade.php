@@ -5,6 +5,8 @@
 {{ $product->product_name_en }} Product Details
 @endsection
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 <style>
 	.checked {
   color: orange;
