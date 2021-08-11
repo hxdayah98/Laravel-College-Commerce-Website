@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
- 
+
 use App\Models\Slider;
 use Carbon\Carbon;
 use Image;
 
 class SliderController extends Controller
 {
-    
+
 	public function SliderView(){
 		$sliders = Slider::latest()->get();
 		return view('backend.slider.slider_view',compact('sliders'));
@@ -21,17 +21,17 @@ class SliderController extends Controller
      public function SliderStore(Request $request){
 
     	$request->validate([
-    		 
+
     		'slider_img' => 'required',
     	],[
     		'slider_img.required' => 'Please select an image',
-    		 
+
     	]);
 
     	$image = $request->file('slider_img');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	Image::make($image)->resize(870,370)->save('public/upload/slider/'.$name_gen);
-    	$save_url = 'public/upload/slider/'.$name_gen;
+    	Image::make($image)->resize(870,370)->save('upload/slider/'.$name_gen);
+    	$save_url = 'upload/slider/'.$name_gen;
 
 	Slider::insert([
 		'title' => $request->title,
@@ -48,7 +48,7 @@ class SliderController extends Controller
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
@@ -60,7 +60,7 @@ class SliderController extends Controller
 
 
 public function SliderUpdate(Request $request){
-    	
+
     	$slider_id = $request->id;
     	$old_img = $request->old_image;
 
@@ -91,7 +91,7 @@ public function SliderUpdate(Request $request){
     	Slider::findOrFail($slider_id)->update([
 		'title' => $request->title,
 		'description' => $request->description,
-		
+
 
     	]);
 
@@ -102,8 +102,8 @@ public function SliderUpdate(Request $request){
 
 		return redirect()->route('manage-slider')->with($notification);
 
-    	} // end else 
-    } // end method 
+    	} // end else
+    } // end method
 
 
     public function SliderDelete($id){
@@ -132,7 +132,7 @@ public function SliderUpdate(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
     public function SliderActive($id){
@@ -145,7 +145,7 @@ public function SliderUpdate(Request $request){
 
 		return redirect()->back()->with($notification);
 
-    } // end method 
+    } // end method
 
 
 
@@ -153,4 +153,3 @@ public function SliderUpdate(Request $request){
 
 
 }
- 
