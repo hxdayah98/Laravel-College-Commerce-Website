@@ -134,7 +134,7 @@ class ProductController extends Controller
       ]);
 
           $notification = array(
-			'message' => 'Product Updated Without Image Successfully',
+			'message' => 'Product Without Image Updated Successfully',
 			'alert-type' => 'success'
 		);
 		return redirect()->route('manage-product')->with($notification);
