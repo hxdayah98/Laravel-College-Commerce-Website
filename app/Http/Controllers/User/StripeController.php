@@ -76,7 +76,7 @@ class StripeController extends Controller
      	];
 
      	Mail::to($request->email)->send(new OrderMail($data));
-         Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage($details));
+         Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage('New order is coming! Please come back to the system.'));
 
      // End Send Email
 
