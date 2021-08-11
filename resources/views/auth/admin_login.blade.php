@@ -27,7 +27,7 @@
 				<div class="row justify-content-center no-gutters">
 					<div class="col-lg-4 col-md-5 col-12">
 	<div class="content-top-agile p-10">
-        <p class="text-white-50"><img src="{{ asset('/upload/logo/1706281796947709.png') }}"></p>
+        <p class="text-white-50"><img src="{{ asset('/upload/logo/colcom.png') }}"></p>
 		<h2 class="text-white">Welcome to Colcom Admin</h2>
 		<p class="text-white-50">Sign in to start your session</p>
 	</div>
