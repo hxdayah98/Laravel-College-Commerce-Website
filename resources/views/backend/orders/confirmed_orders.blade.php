@@ -3,16 +3,16 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
-		 
+
 
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			   
-		 
+
+
 
 			<div class="col-12">
 
@@ -32,7 +32,7 @@
 								<th>Payment </th>
 								<th>Status </th>
 								<th>Action</th>
-								 
+
 							</tr>
 						</thead>
 						<tbody>
@@ -52,11 +52,11 @@
  <a target="_blank" href="{{ route('invoice.download',$item->id) }}" class="btn btn-danger" title="Invoice Download">
  	<i class="fa fa-download"></i></a>
 		</td>
-							 
+
 	 </tr>
 	  @endforeach
 						</tbody>
-						 
+
 					  </table>
 					</div>
 				</div>
@@ -64,22 +64,22 @@
 			  </div>
 			  <!-- /.box -->
 
-			          
+
 			</div>
 			<!-- /.col -->
 
- 
 
- 
+
+
 
 
 		  </div>
 		  <!-- /.row -->
 		</section>
 		<!-- /.content -->
-	  
+
 	  </div>
-  
+
 
 
 
