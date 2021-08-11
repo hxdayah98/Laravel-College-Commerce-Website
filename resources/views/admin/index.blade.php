@@ -65,22 +65,12 @@
                 <i class="text-info mr-0 font-size-24 mdi mdi-cash"></i>
             </div>
             <div>
-                <p class="text-mute mt-20 mb-0 font-size-16">Yearly Sale </p>
-                <h3 class="text-white mb-0 font-weight-500">${{ $year }} <small class="text-success"><i class="fa fa-caret-up"></i> RM</small></h3>
+                <p class="text-mute mt-20 mb-0 font-size-16">Pending</p>
+                <h3 class="text-white mb-0 font-weight-500">{{ count($pending) }} <small class="text-success"><i class="fa fa-caret-up"></i> Order(s)</small></h3>
             </div>
         </div>
     </div>
     </div>
-<div class="col-xl-3 col-6">
-<div class="box overflow-hidden pull-up">
-	<div class="box-body">
-		<div class="icon bg-danger-light rounded w-60 h-60">
-			<h3 class="text-white mb-0 font-weight-500">{{ count($pending) }} <small class="text-danger"><i class="text-danger mr-0 font-size-24 mdi mdi-cart"></i> Order </small></h3>
-		</div>
-	</div>
-</div>
-</div>
-
 
 <div class="col-12">
 <div class="box">
