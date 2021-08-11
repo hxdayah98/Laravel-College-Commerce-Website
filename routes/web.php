@@ -461,7 +461,7 @@ Route::get('/admin/approve/{id}', [ReviewController::class, 'ReviewApprove'])->n
 
 Route::get('/publish', [ReviewController::class, 'PublishReview'])->name('publish.review');
 
-Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('review.delete');
+Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('delete.review');
 
 });
 

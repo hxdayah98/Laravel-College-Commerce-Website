@@ -48,7 +48,6 @@
       <span class="badge badge-pill badge-primary">Pending </span>
        @elseif($item->status == 1)
        <span class="badge badge-pill badge-success">Publish </span>
-       <a href="{{ route('review.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
 		@endif
 
 		  </td>
@@ -56,6 +55,9 @@
 		<td width="25%">
   <a href="{{ route('review.approve',$item->id) }}" class="btn btn-danger">Approve </a>
 		</td>
+        <td width="25%">
+            <a href="{{ route('delete.review',$item->id) }}" class="btn btn-danger" id="delete">Delete </a>
+                  </td>
 
 	 </tr>
 	  @endforeach
