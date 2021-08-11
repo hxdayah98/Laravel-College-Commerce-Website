@@ -10,16 +10,20 @@ use App\Models\SubSubCategory;
 use App\Models\Brand;
 use App\Models\Product;
 use App\Models\MultiImg;
+use App\Models\Admin;
 use Carbon\Carbon;
 use Image;
+use Auth;
 
 class ProductController extends Controller
 {
 
 	public function AddProduct(){
+        $id = Auth::user()->id;
+		$prodAdmin = Admin::find($id);
 		$categories = Category::latest()->get();
 		$brands = Brand::latest()->get();
-		return view('backend.product.product_add',compact('categories','brands'));
+		return view('backend.product.product_add',compact('categories','brands','prodAdmin'));
 	}
 
 	public function StoreProduct(Request $request){
@@ -30,6 +34,7 @@ class ProductController extends Controller
     	$save_url = 'upload/products/thumbnail/'.$name_gen;
 
       $product_id = Product::insertGetId([
+        'admin_id' => $request->admin_id,
       	'brand_id' => $request->brand_id,
       	'category_id' => $request->category_id,
       	'subcategory_id' => $request->subcategory_id,

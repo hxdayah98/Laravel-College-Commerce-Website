@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                 return redirect($guard.'/dashboard');
             }
         }
- 
+
         return $next($request);
     }
 }

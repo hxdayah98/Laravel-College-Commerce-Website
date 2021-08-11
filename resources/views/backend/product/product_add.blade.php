@@ -23,7 +23,6 @@
 
   <form method="post" action="{{ route('product-store') }}" enctype="multipart/form-data" >
 		 	@csrf
-
 					  <div class="row">
 	<div class="col-12">
 
@@ -106,7 +105,6 @@
 		 </div>
 
 			</div> <!-- end col md 4 -->
-
 			<div class="col-md-4">
 
 				 <div class="form-group">
@@ -433,6 +431,7 @@
 			</div>
 		</div>
 		 </div>
+         <input type="text" name="admin_id" value="{{ $prodAdmin->id }}" disabled>
 
 						<div class="text-xs-right">
 <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Product">

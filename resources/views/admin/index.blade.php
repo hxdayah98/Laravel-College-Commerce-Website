@@ -64,10 +64,6 @@
 		<div class="icon bg-danger-light rounded w-60 h-60">
 			<i class="text-danger mr-0 font-size-24 mdi mdi-cart"></i>
 		</div>
-		<div>
-			<p class="text-mute mt-20 mb-0 font-size-16">Pending Orders </p>
-			<h3 class="text-white mb-0 font-weight-500">{{ count($pending) }} <small class="text-success"><i class="fa fa-caret-up"></i> Order(s) </small></h3>
-		</div>
 	</div>
 </div>
 </div>

@@ -94,8 +94,7 @@ Route::get('/user/change/password', [IndexController::class, 'UserChangePassword
 Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
 
 // Seller All Routes
-Route::get('/seller/register', [AdminController::class, 'sellerRegister'])->name('seller.register');
-Route::get('/seller/registration', [AdminController::class, 'seller-register'])->name('seller_register');
+Route::get('/seller/register', [SellerController::class, 'seller-register'])->name('seller_register');
 
 // Admin Brand All Routes
 
@@ -157,7 +156,7 @@ Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategor
 
 });
 
-// Admin Products All Routes
+// Seller Products All Routes
 
 Route::prefix('product')->group(function(){
 
