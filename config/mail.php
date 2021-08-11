@@ -14,7 +14,6 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'smtp'),
-
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -35,6 +34,7 @@ return [
 
     'mailers' => [
         'smtp' => [
+            'driver' => 'smtp',
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'smtp.gmail.com'),
             'port' => env('MAIL_PORT', 587),
