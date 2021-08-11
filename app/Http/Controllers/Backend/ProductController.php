@@ -32,7 +32,6 @@ class ProductController extends Controller
     	$save_url = 'upload/products/thumbnail/'.$name_gen;
 
       $product_id = Product::insertGetId([
-        'admin_id' => $request->admin_id,
       	'brand_id' => $request->brand_id,
       	'category_id' => $request->category_id,
       	'subcategory_id' => $request->subcategory_id,
