@@ -50,7 +50,7 @@
        <span class="badge badge-pill badge-success">Publish </span>
 		@endif
 
-		  </td>
+		  </td><td><a href="{{ route('delete.review',$item->id) }}" class="btn btn-danger" id="delete">Delete </a></td>
 
 
 	 </tr>
