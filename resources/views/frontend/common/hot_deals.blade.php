@@ -1,4 +1,10 @@
-     @php
+@section('title')
+{{ $product->product_name_en }} Hot Deals
+@endsection
+
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    @php
 
 $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!=',NULL)->orderBy('id','DESC')->limit(3)->get();
      @endphp
@@ -68,7 +74,7 @@ $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!
                   <div class="action">
                     <div class="add-cart-button btn-group">
                       <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                      <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                      <button class="btn btn-primary cart-btn" onclick="addToCart()" type="button">Add to cart</button>
                     </div>
                   </div>
                   <!-- /.action -->
