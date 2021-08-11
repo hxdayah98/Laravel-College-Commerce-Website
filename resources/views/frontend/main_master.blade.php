@@ -43,10 +43,6 @@
 @yield('content')
 <!-- /#top-banner-and-menu -->
 
-<!-- ============================================================= FOOTER ============================================================= -->
-@include('frontend.body.footer')
-<!-- ============================================================= FOOTER : END============================================================= -->
-
 <!-- For demo purposes – can be removed on production -->
 
 <!-- For demo purposes – can be removed on production : End -->
