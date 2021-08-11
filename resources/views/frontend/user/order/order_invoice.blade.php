@@ -48,7 +48,7 @@
     <tr>
         <td valign="top">
           <!-- {{-- <img src="" alt="" width="150"/> --}} -->
-          <h2 style="color: green; font-size: 26px;"><strong>EasyShop</strong></h2>
+          <h2 style="color: green; font-size: 26px;"><strong>Colcom</strong></h2>
         </td>
         <td align="right">
             <pre class="font" >
@@ -80,7 +80,7 @@
             $cit = $order->city->city_name;
            @endphp
 
-           <strong>Address:</strong> {{ $sta }},{{ $dis }}.{{ $cit }} <br>
+           <strong>Address:</strong> {{ $sta }},{{ $dis }},{{ $cit }} <br>
            <strong>Post Code:</strong> {{ $order->post_code }}
          </p>
         </td>
@@ -152,8 +152,10 @@
     <p>Thanks For Purchasing With Us! Support UiTM Locals!</p>
   </div>
   <div class="authority float-right mt-5">
+  <p>Azminah Azman</p>
       <p>-----------------------------------</p>
-      <h5>Authority Signature:</h5>
+      <h5>Authority Signature</h5><br>
+      <h5>Chief of UiTM Jasin's Student Entrepreneurs</h5>
     </div>
 </body>
 </html>
