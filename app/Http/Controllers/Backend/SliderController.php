@@ -24,19 +24,20 @@ class SliderController extends Controller
     		 
     		'slider_img' => 'required',
     	],[
-    		'slider_img.required' => 'Plz Select One Image',
+    		'slider_img.required' => 'Please select an image',
     		 
     	]);
 
     	$image = $request->file('slider_img');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-    	Image::make($image)->resize(870,370)->save('upload/slider/'.$name_gen);
-    	$save_url = 'upload/slider/'.$name_gen;
+    	Image::make($image)->resize(870,370)->save('public/upload/slider/'.$name_gen);
+    	$save_url = 'public/upload/slider/'.$name_gen;
 
 	Slider::insert([
 		'title' => $request->title,
 		'description' => $request->description,
 		'slider_img' => $save_url,
+		'status' => 1,
 
     	]);
 

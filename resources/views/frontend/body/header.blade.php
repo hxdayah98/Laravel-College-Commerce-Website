@@ -15,7 +15,7 @@
 
 
    @auth
-   <a href="{{ route('login') }}"><i class="icon fa fa-user"></i> @if(session()->get('language') == 'malay')Profil Pengguna @else User Profile @endif</a>
+   <a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i> @if(session()->get('language') == 'malay')Profil Pengguna @else User Profile @endif</a>
    @else
    <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>@if(session()->get('language') == 'malay') Log Masuk/Daftar @else Login/Register @endif</a>
    @endauth
