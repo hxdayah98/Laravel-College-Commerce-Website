@@ -12,8 +12,7 @@ Product Search Page
   <div class="container">
     <div class="breadcrumb-inner">
       <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
+        <li><a href="#">Search Page</a></li>
       </ul>
     </div>
     <!-- /.breadcrumb-inner -->
