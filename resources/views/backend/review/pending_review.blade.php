@@ -53,9 +53,7 @@
 		  </td>
 
 		<td width="25%">
-  <a href="{{ route('review.approve',$item->id) }}" class="btn btn-danger">Approve </a>
-		</td>
-        <td width="25%">
+  <a href="{{ route('review.approve',$item->id) }}" class="btn btn-success">Approve </a>
             <a href="{{ route('delete.review',$item->id) }}" class="btn btn-danger" id="delete">Delete </a>
                   </td>
 
