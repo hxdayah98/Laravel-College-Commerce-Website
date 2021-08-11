@@ -19,11 +19,9 @@ class ProductController extends Controller
 {
 
 	public function AddProduct(){
-        $id = Auth::user()->id;
-		$prodAdmin = Admin::find($id);
 		$categories = Category::latest()->get();
 		$brands = Brand::latest()->get();
-		return view('backend.product.product_add',compact('categories','brands','prodAdmin'));
+		return view('backend.product.product_add',compact('categories','brands'));
 	}
 
 	public function StoreProduct(Request $request){
