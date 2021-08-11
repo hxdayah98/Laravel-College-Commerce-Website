@@ -57,7 +57,7 @@
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"><img src="{{ asset('public/upload/logo/colcom.png') }}" alt="logo"> </a> </div>
+          <div class="logo"> <a href="{{ url('/') }}"> <img src="{{ asset('/upload/logo/colcom.png') }}" alt="logo"> </a> </div>
           <!-- /.logo -->
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
