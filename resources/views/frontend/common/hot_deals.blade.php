@@ -1,5 +1,4 @@
-
-    @php
+     @php
 
 $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!=',NULL)->orderBy('id','DESC')->limit(3)->get();
      @endphp
@@ -64,6 +63,10 @@ $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!
 
                 </div>
                 <!-- /.product-info -->
+
+                <div class="cart clearfix animate-effect">
+                  <div class="action">
+                  </div>
                   <!-- /.action -->
                 </div>
                 <!-- /.cart -->
