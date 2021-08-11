@@ -306,7 +306,7 @@
 			<div class="col-md-6">
 
 	    <div class="form-group">
-			<h5>Product Discount Price <span class="text-danger">*</span></h5>
+			<h5>Price After Discount (RM) <span class="text-danger">*</span></h5>
 			<div class="controls">
 	 <input type="text" name="discount_price" class="form-control" value="{{ $products->discount_price }}">
      @error('discount_price')
