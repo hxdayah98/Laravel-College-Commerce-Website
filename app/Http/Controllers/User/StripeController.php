@@ -75,7 +75,7 @@ class StripeController extends Controller
      	    'email' => $invoice->email,
      	];
 
-     	Mail::to($request->email)->send(new \App\Mail\OrderMail('Hello Sir/Madam! Thank you for using Stripe. You have spent RM'$total_amount));
+     	Mail::to($request->email)->send(new \App\Mail\OrderMail('Hello Sir/Madam! Thank you for using Colcom! We will update to you soon.'));
          Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage('New order is coming! Please come back to the system.'));
 
      // End Send Email
