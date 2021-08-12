@@ -45,7 +45,6 @@
 		<td>{{ $item->post_title_en }}</td>
 		 <td>{{ $item->post_title_my }}</td>
 		<td width="20%">
- <a href="{{ route('blog.category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
  <a href="{{ route('blog.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 		</td>
