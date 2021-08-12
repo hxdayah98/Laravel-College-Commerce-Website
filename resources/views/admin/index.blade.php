@@ -133,10 +133,6 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 			<td>
 				<span class="badge badge-primary-light badge-lg">{{ $item->status }}</span>
 			</td>
-
-			<td class="text-right">
-				<a href="{{ route('orders.pending_orders') }}" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>
-			</td>
 		</tr>
 		@endforeach
 
