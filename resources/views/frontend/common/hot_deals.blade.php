@@ -48,7 +48,7 @@ $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!
                 <!-- /.hot-deal-wrapper -->
 
   <div class="product-info text-left m-t-20">
-    <h3 class="name"><a href="detail.html">
+    <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
       @if(session()->get('language') == 'malay') {{ $product->product_name_my }} @else {{ $product->product_name_en }} @endif</a></h3>
     <div class="rating rateit-small"></div>
 
