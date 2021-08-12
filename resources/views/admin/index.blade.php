@@ -97,7 +97,6 @@ $orders = App\Models\Order::where('status','pending')->orderBy('id','DESC')->get
 	<th style="min-width: 100px"><span class="text-fade">Amount</span></th>
 	<th style="min-width: 150px"><span class="text-fade">Payment</span></th>
 	<th style="min-width: 130px"><span class="text-fade">Status</span></th>
-	<th style="min-width: 120px"><span class="text-fade">Process</span> </th>
 </tr>
 				</thead>
 				<tbody>
