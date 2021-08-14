@@ -155,5 +155,21 @@ public function BlogCategoryUpdate(Request $request){
 
 } // end method
 
+public function BlogCategoryDelete($id){
+
+    $blog = BlogPostCategory::findOrFail($id);
+    //unlink($img);
+
+    BlogPostCategory::findOrFail($id)->delete();
+
+     $notification = array(
+        'message' => 'Blog Post Deleted Successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
+
+} // end method
+
 
 }

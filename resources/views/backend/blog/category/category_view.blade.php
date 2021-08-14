@@ -27,8 +27,8 @@
 						<thead>
 							<tr>
 
-								<th>Blog Category En</th>
-								<th>Blog Category Hin </th>
+								<th>Blog Category (EN)</th>
+								<th>Blog Category (MY)</th>
 								<th>Action</th>
 
 							</tr>
@@ -41,7 +41,7 @@
 		 <td>{{ $item->blog_category_name_my }}</td>
 		<td>
  <a href="{{ route('blog.category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
- <a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
+ <a href="{{ route('blog.category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 		</td>
 
