@@ -425,7 +425,7 @@ Route::post('/store', [BlogController::class, 'BlogCategoryStore'])->name('blogc
 Route::get('/category/edit/{id}', [BlogController::class, 'BlogCategoryEdit'])->name('blog.category.edit');
 Route::get('/category/delete/{id}', [BlogController::class, 'BlogCategoryDelete'])->name('blog.delete');
 
-Route::post('/update', [BlogController::class, 'BlogCategoryUpdate'])->name('blogcategory.update');
+Route::post('/update', [BlogController::class, 'BlogCategoryUpdate'])->name('blog.category.update');
 
 // Admin View Blog Post Routes
 
