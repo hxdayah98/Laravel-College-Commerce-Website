@@ -91,7 +91,7 @@ class AdminUserController extends Controller
 
     	if ($request->file('profile_photo_path')) {
 
-    	unlink($old_img);
+    	//unlink($old_img);
     	$image = $request->file('profile_photo_path');
     	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
     	Image::make($image)->resize(225,225)->save('upload/admin_images/'.$name_gen);
@@ -178,7 +178,7 @@ class AdminUserController extends Controller
 
  		$adminimg = Admin::findOrFail($id);
  		$img = $adminimg->profile_photo_path;
- 		unlink($img);
+ 		//unlink($img);
 
  		Admin::findOrFail($id)->delete();
 

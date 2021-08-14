@@ -184,7 +184,7 @@ class ProductController extends Controller
  //// Multi Image Delete ////
      public function MultiImageDelete($id){
      	$oldimg = MultiImg::findOrFail($id);
-     	unlink($oldimg->photo_name);
+     	//unlink($oldimg->photo_name);
      	MultiImg::findOrFail($id)->delete();
      	$notification = array(
 			'message' => 'Product Image Deleted Successfully',
@@ -213,12 +213,12 @@ class ProductController extends Controller
 
      public function ProductDelete($id){
      	$product = Product::findOrFail($id);
-     	unlink($product->product_thumbnail);
+     	//unlink($product->product_thumbnail);
      	Product::findOrFail($id)->delete();
 
      	$images = MultiImg::where('product_id',$id)->get();
      	foreach ($images as $img) {
-     		unlink($img->photo_name);
+     		//unlink($img->photo_name);
      		MultiImg::where('product_id',$id)->delete();
      	}
      	$notification = array(

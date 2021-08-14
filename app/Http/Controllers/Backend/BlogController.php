@@ -142,7 +142,7 @@ public function BlogCategoryUpdate(Request $request){
 
     $blog = BlogPost::findOrFail($id);
     $img = $blog->post_image;
-    unlink($img);
+    //unlink($img);
 
     BlogPost::findOrFail($id)->delete();
 

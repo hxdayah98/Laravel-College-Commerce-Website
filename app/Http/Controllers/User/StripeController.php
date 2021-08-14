@@ -93,6 +93,8 @@ class StripeController extends Controller
      		'created_at' => Carbon::now(),
 
      	]);
+        $product = Product::find($item->id);
+        $product->decrement('votes', $item->quantity);
      }
 
 

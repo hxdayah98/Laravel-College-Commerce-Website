@@ -39,7 +39,7 @@ class AdminProfileController extends Controller
 
 		if ($request->file('profile_photo_path')) {
 			$file = $request->file('profile_photo_path');
-			@unlink(public_path('upload/admin_images/'.$data->profile_photo_path));
+			//@unlink(public_path('upload/admin_images/'.$data->profile_photo_path));
 			$filename = date('YmdHi').$file->getClientOriginalName();
 			$file->move(public_path('upload/admin_images'),$filename);
 			$data['profile_photo_path'] = $filename;
@@ -96,7 +96,7 @@ class AdminProfileController extends Controller
     	$user = User::findOrFail($id);
     	$img = $user->profile_photo_path;
         if ($user->profile_photo_path != NULL) {
-    	unlink($img);
+    	//unlink($img);
         }
     	User::findOrFail($id)->delete();
     	 $notification = array(
