@@ -141,9 +141,7 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
-  <li> <a href="{{ url('/') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
-@if(session()->get('language') == 'malay') Menu Utama @else Home @endif
-  </a> </li>
+                <li> <a href="{{ route('/')}}"> @if(session()->get('language') == 'malay')Menu Utama @else Home @endif</a> </li>
 
   <li> <a href="{{ route('shop.page')}}"> @if(session()->get('language') == 'malay')Semua @else All @endif</a> </li>
 <!--   // Get Category Table Data -->
