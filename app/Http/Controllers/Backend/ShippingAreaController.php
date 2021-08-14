@@ -218,7 +218,7 @@ public function CityEdit($id){
     $state = ShipState::orderBy('state_name','ASC')->get();
     $district = ShipDistrict::orderBy('district_name','ASC')->get();
     $city = ShipCity::findOrFail($id);
-		return view('backend.ship.state.edit_state',compact('state','district','city'));
+		return view('backend.ship.state.edit_city',compact('state','district','city'));
     }
 
 
