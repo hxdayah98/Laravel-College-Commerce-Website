@@ -321,7 +321,7 @@ function productView(id){
                     miniCart += `<div class="cart-item product-summary">
           <div class="row">
             <div class="col-xs-4">
-              <div class="image"> <a href="detail.html"><img src="/${value.options.image}" alt=""></a> </div>
+              <div class="image"><img src="/${value.options.image}" alt=""> </div>
             </div>
             <div class="col-xs-7">
               <h3 class="name">${value.name}</h3>
