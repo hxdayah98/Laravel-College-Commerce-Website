@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
 
     	$categories = Category::orderBy('category_name_en','ASC')->get();
     	$subcategory = SubCategory::latest()->get();
-    	return view('backend.category.subcategory_view',compact('subcategory','categories'));
+    	return view('backend.category.subcategory_view',compact('categories','subcategory'));
 
     }
 
