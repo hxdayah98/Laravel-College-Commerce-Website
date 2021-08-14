@@ -76,7 +76,7 @@ class StripeController extends Controller
      	];
 
      	Mail::to($request->email)->send(new \App\Mail\NewOrderMessage('Hello Sir/Madam! Thank you for using Colcom! We will update to you soon.'));
-         Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage('New order is coming! Please come back to the system.'));
+        Mail::to('colcomuitm@gmail.com')->send(new \App\Mail\NewOrderMessage('New order is coming! Please come back to the system.'));
 
      // End Send Email
 
