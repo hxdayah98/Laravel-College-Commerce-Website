@@ -12,3 +12,6 @@ Password: udemy12345
 https://colcom-ecommerce-fyp.herokuapp.com/login (CUSTOMER)
 Username: miraclein1998@gmail.com
 Password: udemy12345
+
+
+If there is any error occured, please do not hesitate to inform me. Thank you!
